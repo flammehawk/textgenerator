@@ -1,7 +1,6 @@
 module.exports = {
-    extends: [
-        './commitlint.types.js',
-        './commitlint.scope.js',
-        '@commitlint/config-conventional',
-    ],
+    extends: ['@rto-websites/commitlint-config-rto'],
+    rules: {
+        'scope-enum': [2, 'always', ['global']], //add the scopes you need
+    },
 }
