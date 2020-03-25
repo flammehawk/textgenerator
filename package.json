@@ -1,31 +1,35 @@
 {
-    "name": "textgenerator",
-    "version": "1.0.0",
-    "description": "Generates a random Text based on options and predefined Texts",
-    "main": "index.js",
-    "scripts": {
-        "test": "jest",
-        "coverage": "jest --coverage"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/flammehawk/textgenerator.git"
-    },
-    "keywords": [
-        "typescript",
-        "graphql",
-        "node",
-        "express"
-    ],
     "author": "flammehawk <https://github.com/flammehawk>",
-    "license": "GPL-3.0",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-graphql": "^0.9.0",
+        "gently-copy": "^3.2.0",
+        "graphql": "^14.6.0",
+        "inversify": "^5.0.1",
+        "reflect-metadata": "^0.1.13",
+        "source-maps": "^1.0.12"
+    },
+    "description": "Generates a random Text based on options and predefined Texts",
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
+        "@rto-websites/commitlint-config-rto": "^1.0.3",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.3",
+        "@types/graphql": "^14.5.0",
         "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.3",
         "@typescript-eslint/eslint-plugin": "^2.24.0",
         "@typescript-eslint/parser": "^2.24.0",
+        "babel-cli": "^6.26.0",
+        "babel-jest": "^22.4.1",
+        "babel-preset-react-app": "^3.1.1",
+        "conventional-changelog-conventionalcommits": "^4.2.3",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-eslint-comments": "^3.1.2",
+        "eslint-plugin-jest": "^23.8.2",
+        "eslint-plugin-node": "^11.0.0",
         "eslint-plugin-prettier": "^3.1.2",
         "husky": "^4.2.3",
         "jest": "^25.1.0",
@@ -36,19 +40,38 @@
         "ts-node": "^8.8.1",
         "typescript": "^3.8.3"
     },
-    "dependencies": {
-        "@rto-websites/commitlint-config-rto": "^1.0.3",
-        "@types/express": "^4.17.3",
-        "conventional-changelog-conventionalcommits": "^4.2.3",
-        "dotenv-defaults": "^1.1.1",
-        "express": "^4.17.1",
-        "express-graphql": "^0.9.0",
-        "gently-copy": "^3.2.0",
-        "graphql": "^14.6.0",
-        "inversify": "^5.0.1",
-        "reflect-metadata": "^0.1.13"
+    "engines": {
+        "node": ">=12.0.0"
     },
+    "keywords": [
+        "typescript",
+        "graphql",
+        "node",
+        "express"
+    ],
+    "license": "GPL-3.0",
     "lint-staged": {
         "*.ts": "eslint --cache --fix"
+    },
+    "main": "index.js",
+    "name": "textgenerator",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flammehawk/textgenerator.git"
+    },
+    "scripts": {
+        "coverage": "jest --coverage",
+        "start": "nodemon",
+        "test": "jest",
+        "tsc": "tsc"
+    },
+    "version": "1.0.0",
+    "nodemonConfig": {
+        "ignore": [
+            "test/**/*",
+            "dist/**/*"
+        ],
+        "ext": "ts",
+        "exec": "ts-node ./src/server/server.ts "
     }
 }

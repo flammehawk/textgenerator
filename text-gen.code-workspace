@@ -117,6 +117,13 @@
                 "type": "text",
                 "multiline": true
             }
-        ]
+        ],
+        "jestRunIt.jestConfigPath": "./jest.config.js",
+        "jestRunIt.testMatchPatterns": [
+            "**/*.{spec,test}.{js,ts,jsx,tsx}",
+            "**/__test__/*.{js,ts,jsx,tsx}"
+        ],
+        "eslint.alwaysShowStatus": true,
+        "eslint.lintTask.enable": true
     }
 }
